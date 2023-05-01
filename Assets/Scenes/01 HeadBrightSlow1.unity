@@ -2095,6 +2095,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParticipantID: 001
+  notificationType: Head
+  CorrentAnswer: Yes
+  notificationColor: Light
+  speed: 10
 --- !u!1 &202728024
 GameObject:
   m_ObjectHideFlags: 0
@@ -6811,7 +6815,7 @@ MonoBehaviour:
   frontLeft: {fileID: 1890336805}
   rearRight: {fileID: 1262988992}
   rearLeft: {fileID: 784792203}
-  maxSpeed: 15
+  maxSpeed: 10
   speed: 0
 --- !u!65 &621290059
 BoxCollider:
@@ -8045,7 +8049,7 @@ MonoBehaviour:
   frontLeft: {fileID: 1745055700}
   rearRight: {fileID: 94800980}
   rearLeft: {fileID: 1393878911}
-  maxSpeed: 15
+  maxSpeed: 10
   speed: 0
 --- !u!65 &724547724
 BoxCollider:
@@ -10274,7 +10278,7 @@ GameObject:
   - component: {fileID: 1082366159}
   - component: {fileID: 1082366158}
   m_Layer: 0
-  m_Name: Sender car1 (1)
+  m_Name: Collision Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17930,7 +17934,7 @@ MonoBehaviour:
   frontLeft: {fileID: 1633245981}
   rearRight: {fileID: 492046598}
   rearLeft: {fileID: 1236413344}
-  maxSpeed: 15
+  maxSpeed: 10
   speed: 0
 --- !u!65 &1794860512
 BoxCollider:
@@ -21801,7 +21805,7 @@ MonoBehaviour:
   frontLeft: {fileID: 462792651}
   rearRight: {fileID: 1417522598}
   rearLeft: {fileID: 1135563376}
-  maxSpeed: 15
+  maxSpeed: 10
   speed: 0
 --- !u!4 &1042418186882055422
 Transform:

@@ -11,6 +11,11 @@ public class ExportTime : MonoBehaviour
     public StringBuilder sb = new System.Text.StringBuilder();
     private string contentData;
     public string ParticipantID;
+    public string notificationType;
+    public string CorrentAnswer;
+    public string notificationColor;
+    public string speed;
+    private Decimal prev;
 
     void Start()
     {
@@ -19,21 +24,25 @@ public class ExportTime : MonoBehaviour
 
     public void addHeaders()
     {
-        sb.AppendLine("Type;Corrent answer;Answer;Time");
+        sb.AppendLine("NotificationType;NotificationColor;Speed;CorrentAnswer;Answer;Time");
     }
 
     public void recordYes()
     {
         decimal time = Decimal.Round((decimal)Time.time, 4);
-        sb.AppendLine("Head;" + "No;" + "Yes;" + time.ToString());
+        if (prev == time) return;
+        sb.AppendLine(notificationType + ";" + notificationColor + ";" + speed + ";" + CorrentAnswer + ";" + "Yes;" + time.ToString());
         SaveToFile(sb.ToString());
+        prev = time;
     }
 
         public void recordNo()
     {
         decimal time = Decimal.Round((decimal)Time.time, 4);
-        sb.AppendLine("Head;" + "No;" + "No;" + time.ToString());
+        if (prev == time) return;
+        sb.AppendLine(notificationType + ";" + notificationColor + ";" + speed + ";" + CorrentAnswer + ";" + "No;" + time.ToString());
         SaveToFile(sb.ToString());
+        prev = time;
     }
 
     public void SaveToFile(string content)

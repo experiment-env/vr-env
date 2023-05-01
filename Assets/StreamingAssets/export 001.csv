@@ -1,2 +1,4 @@
-Type;Corrent answer;Answer;Time
-Head;No;Yes;10.8870
+NotificationType;NotificationColor;Speed;CorrentAnswer;Answer;Time
+Hand;Light;10;Yes;Yes;2.5687
+Hand;Light;10;Yes;Yes;2.7441
+Hand;Light;10;Yes;Yes;2.9366
