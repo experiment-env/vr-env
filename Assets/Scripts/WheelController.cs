@@ -9,28 +9,22 @@ public class WheelController : MonoBehaviour
     [SerializeField] private WheelCollider rearRight;
     [SerializeField] private WheelCollider rearLeft;
 
+    private float acceleration = 300f;
+    private float breakForce = 0f;
+    public float maxSpeed = 15f;
 
-    public float acceleration = 15f;
-    public float breakForce = 0f;
-
-    public float speedOnKmh = 0.0f; 
-
-    public void speedometer(){
-         float wheelRadius = 0.035f;
-         float wheelRpm = frontLeft.rpm; 
-         float circumFerence = wheelRadius*2;
- 
-         circumFerence = 2.0f * 3.14f * wheelRadius; // Finding circumFerence 2 Pi R
-         speedOnKmh = (circumFerence * wheelRpm)*60 / 1000; // finding kmh
-    }
-
-
+    public float speed = 0.0f; 
 
     private void FixedUpdate()
     {
-
-        frontRight.motorTorque = acceleration;
-        frontLeft.motorTorque = acceleration;
+        speed = GetComponent<Rigidbody>().velocity.sqrMagnitude;
+        if(speed < maxSpeed){
+            frontRight.motorTorque = acceleration;
+            frontLeft.motorTorque = acceleration;
+        } else {
+            frontRight.motorTorque = 0f;
+            frontLeft.motorTorque = 0f;
+        }
 
         frontRight.brakeTorque = breakForce;
         frontLeft.brakeTorque = breakForce;
@@ -50,7 +44,6 @@ public class WheelController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speedometer();
 
     }
 }
