@@ -88,12 +88,6 @@ public class Q_Vignette_Split : Q_Vignette_Base
             CheckReferences();
             UpdateVignette();
 
-
-            if(Time.time>=nextUpdate){
-                // Change the next update (current second+1)
-                nextUpdate=Mathf.FloorToInt(Time.time)+1;
-            }
-
             Color full = new Color(0.86f, 0.22f, 0.17f, 1);
             Color empty = new Color(0.86f, 0.22f, 0.17f, 0);
 
@@ -166,11 +160,6 @@ public class Q_Vignette_Split : Q_Vignette_Base
 
     }
 
-    void UpdateEverySecond()
-    {
-
-
-    }
 
     void CheckVignetteScale()
     {
@@ -185,9 +174,6 @@ public class Q_Vignette_Split : Q_Vignette_Base
             SetVignetteMainScale( mainScale );
         }   
     }
-
-    
-
 
 }
 
