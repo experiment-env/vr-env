@@ -10,15 +10,17 @@ public class WristUI : MonoBehaviour
     public InputActionAsset inputActions;
 
     public Canvas _wristCanvas;
+    public Canvas _wristCanvas2;
     public InputAction _menu;
     // Start is called before the first frame update
     void Start()
     {
-        _wristCanvas = GetComponent<Canvas>();
-        _menu = inputActions.FindActionMap("XRI LeftHand Interaction").FindAction("Menu");
-        _menu.Enable();
-        _menu.performed += ToggleMenu;
-        
+        _wristCanvas2.enabled = false;
+    }
+
+    public void uiPress(){
+        _wristCanvas.enabled = !_wristCanvas.enabled;
+        _wristCanvas2.enabled = !_wristCanvas2.enabled;
     }
 
     // Update is called once per frame
@@ -30,5 +32,6 @@ public class WristUI : MonoBehaviour
     public void ToggleMenu(InputAction.CallbackContext context)
     {
         _wristCanvas.enabled = !_wristCanvas.enabled;
+        _wristCanvas2.enabled = !_wristCanvas2.enabled;
     }
 }

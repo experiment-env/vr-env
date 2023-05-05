@@ -8,6 +8,7 @@ public class CollisionTrigger : MonoBehaviour
     public GameObject car2;
     public GameObject car3;
     public GameObject car4;
+    public GameObject car5;
     
     void OnTriggerEnter(Collider other)
     {
@@ -15,6 +16,7 @@ public class CollisionTrigger : MonoBehaviour
         car2.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         car3.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         car4.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        car5.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     
     }
 }
